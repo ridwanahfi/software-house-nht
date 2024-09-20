@@ -22,8 +22,6 @@
                         <th width="100">No</th>
                         <th>Name</th>
                         <th width="150">Price (IDR)</th>
-                        <th width="150">Stock</th>
-                        <th width="150">Sold Out</th>
                         <th width="120">Visit Count</th>
                         <th width="200">Created</th>
                         <th width="100"></th>

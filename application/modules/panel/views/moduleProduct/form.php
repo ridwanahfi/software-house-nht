@@ -71,14 +71,14 @@
             <div class="row">
               <div class="col-xs-10 col-md-6">
                 <div class="form-group">
-                  <label>Merk</label>
+                  <label>Link Demo</label>
                   <input
                     type="text"
-                    name="merk"
-                    class="form-control product-merk"
-                    placeholder="Merk"
+                    name="link_demo"
+                    class="form-control product-link_demo"
+                    placeholder="Link Demo"
                     maxlength="200"
-                    value="<?php echo (isset($data->merk)) ? $data->merk : '' ?>"
+                    value="<?php echo (isset($data->link_demo)) ? $data->link_demo : '' ?>"
                     style="text-transform: capitalize;"
                   />
                   <i class="form-group__bar"></i>
@@ -99,76 +99,6 @@
                       value="<?php echo (isset($data->price)) ? $data->price : '' ?>"
                     />
                     <i class="form-group__bar"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-10 col-md-6">
-                <div class="form-group">
-                  <label required>Stock</label>
-                  <input
-                    type="text"
-                    name="stock"
-                    class="form-control mask-money product-stock"
-                    placeholder="0"
-                    value="<?php echo (isset($data->stock)) ? $data->stock : '' ?>"
-                  />
-                  <i class="form-group__bar"></i>
-                </div>
-              </div>
-              <div class="col-xs-10 col-md-6">
-                <div class="form-group">
-                  <label>Sold Out</label>
-                  <input
-                    type="text"
-                    name="sold_out"
-                    class="form-control mask-money product-sold_out"
-                    placeholder="0"
-                    value="<?php echo (isset($data->sold_out)) ? $data->sold_out : '' ?>"
-                  />
-                  <i class="form-group__bar"></i>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-10 col-md-6">
-                <div class="form-group">
-                  <label required>Province</label>
-                  <div class="form-group">
-                    <select name="send_from_province" class="select2 product-send_from_province" data-placeholder="Select a province">
-                      <option></option>
-                      <?php
-                        if (count($data_provinces) > 0) {
-                          foreach ($data_provinces as $index => $item) {
-                            $selected = (isset($data->province_id) && $data->province_id == $item->id) ? 'selected' : '';
-                            echo '<option value="'.$item->id.'" '.$selected.'>'.$item->name.'</option>';
-                          };
-                        };
-                      ?>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-10 col-md-6">
-                <div class="form-group">
-                  <label required>Regency</label>
-                  <div class="form-group">
-                    <select name="send_from" class="select2 product-send_from" data-placeholder="Select a regency">
-                      <option></option>
-                      <?php
-                        if (isset($data_regencies)) {
-                          if (count($data_regencies) > 0) {
-                            foreach ($data_regencies as $index => $item) {
-                              $selected = (isset($data->send_from) && $data->send_from == $item->id) ? 'selected' : '';
-                              echo '<option value="'.$item->id.'" '.$selected.'>'.$item->name.'</option>';
-                            };
-                          };
-                        };
-                      ?>
-                    </select>
                   </div>
                 </div>
               </div>
@@ -261,6 +191,77 @@
                       <?php
                         if (isset($data->image4) && !empty($data->image4) && !is_null($data->image4)) {
                           echo '<img src="'.base_url($data->image4).'"/>';
+                        };
+                      ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-5 col-md-3">
+                <div class="form-group-xs">
+                  <label>Image 5</label>
+                  <div class="upload">
+                    <div class="upload-button">
+                      <input type="file" name="image5" class="upload-pure-button product-image5" data-preview="image5"/>
+                    </div>
+                    <div class="upload-preview preview-image5">
+                      <?php
+                        if (isset($data->image5) && !empty($data->image5) && !is_null($data->image5)) {
+                          echo '<img src="'.base_url($data->image5).'"/>';
+                        };
+                      ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-5 col-md-3">
+                <div class="form-group-xs">
+                  <label>Image 6</label>
+                  <div class="upload">
+                    <div class="upload-button">
+                      <input type="file" name="image6" class="upload-pure-button product-image6" data-preview="image6"/>
+                    </div>
+                    <div class="upload-preview preview-image6">
+                      <?php
+                        if (isset($data->image6) && !empty($data->image6) && !is_null($data->image6)) {
+                          echo '<img src="'.base_url($data->image6).'"/>';
+                        };
+                      ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-5 col-md-3">
+                <div class="form-group-xs">
+                  <label>Image 7</label>
+                  <div class="upload">
+                    <div class="upload-button">
+                      <input type="file" name="image7" class="upload-pure-button product-image7" data-preview="image7"/>
+                    </div>
+                    <div class="upload-preview preview-image7">
+                      <?php
+                        if (isset($data->image7) && !empty($data->image7) && !is_null($data->image7)) {
+                          echo '<img src="'.base_url($data->image7).'"/>';
+                        };
+                      ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-5 col-md-3">
+                <div class="form-group-xs">
+                  <label>Image 8</label>
+                  <div class="upload">
+                    <div class="upload-button">
+                      <input type="file" name="image8" class="upload-pure-button product-image8" data-preview="image8"/>
+                    </div>
+                    <div class="upload-preview preview-image8">
+                      <?php
+                        if (isset($data->image8) && !empty($data->image8) && !is_null($data->image8)) {
+                          echo '<img src="'.base_url($data->image8).'"/>';
                         };
                       ?>
                     </div>

@@ -31,14 +31,6 @@
             data: "price",
             render: $.fn.dataTable.render.number( ',', '.', 0 )
           },
-          {
-            data: "stock",
-            render: $.fn.dataTable.render.number( ',', '.', 0 )
-          },
-          {
-            data: "sold_out",
-            render: $.fn.dataTable.render.number( ',', '.', 0 )
-          },
           {data: "visit_count"},
           {data: "created_at"},
           {
@@ -182,6 +174,18 @@
       readUploadMultipleURL(this);
     });
     $(".product-image4").change(function(){
+      readUploadMultipleURL(this);
+    });
+    $(".product-image5").change(function(){
+      readUploadMultipleURL(this);
+    });
+    $(".product-image6").change(function(){
+      readUploadMultipleURL(this);
+    });
+    $(".product-image7").change(function(){
+      readUploadMultipleURL(this);
+    });
+    $(".product-image8").change(function(){
       readUploadMultipleURL(this);
     });
 

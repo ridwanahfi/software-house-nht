@@ -22,7 +22,7 @@ class Dashboard extends AppBackend
 	public function index() {
 		$data = array(
 			'app' => $this->app(),
-      'main_js' => $this->load_main_js('dashboard'),
+    		'main_js' => $this->load_main_js('dashboard'),
 			'statistic' => $this->StatisticModel->getStatistic(),
 			'blog_rank' => $this->StatisticModel->getBlogRank(),
 			'page_rank' => $this->StatisticModel->getPageRank(),

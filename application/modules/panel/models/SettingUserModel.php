@@ -67,7 +67,7 @@ class SettingUserModel extends CI_Model
   
       $this->full_name = $post['full_name'];
       $this->username = $post['username'];
-      $this->password = md5($post['password']);
+      $this->password = password_verify($post['password']);
       $this->profile_photo = $post['profile_photo'];
       $this->is_active = $post['is_active'];
       $this->db->insert($this->_table, $this);
@@ -92,7 +92,7 @@ class SettingUserModel extends CI_Model
       $this->username = $post['username'];
 
       if (isset($post['password']) && !empty($post['password'])) {
-        $this->password = md5($post['password']);
+        $this->password = password_verify($post['password']);
       };
 
       $this->profile_photo = $post['profile_photo'];

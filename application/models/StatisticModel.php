@@ -101,7 +101,7 @@ class StatisticModel extends CI_Model
 
     if ($formated === false) {
       $temp = [1=>0, 2=>0, 3=>0, 4=>0, 5=>0, 6=>0, 7=>0, 8=>0, 9=>0, 10=>0, 11=>0, 12=>0];
-      if (count($data) > 0) {
+      if ($data) {
         $month = 1;
         foreach ($data as $item) {
           $temp[$month++] = (int) $item;
@@ -110,7 +110,7 @@ class StatisticModel extends CI_Model
       return $temp;
     } else {
       $temp = '[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,0],[8,0],[9,0],[10,0],[11,0],[12,0]';
-      if (count($data) > 0) {
+      if ($data) {
         $month = 1;
         $temp = '';
         foreach ($data as $item) {

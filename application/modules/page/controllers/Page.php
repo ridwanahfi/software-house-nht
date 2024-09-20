@@ -17,7 +17,7 @@ class Page extends App
 	public function view($link = null) {
 		$temp = $this->PageModel->getDetail('link', $link);
 		
-		if (count($temp) > 0) {
+		if ($temp) {
 			$data = array(
 				'app' => $this->app(),
 				'data' => $temp,

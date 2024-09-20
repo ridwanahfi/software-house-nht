@@ -46,6 +46,38 @@
                     <?php endif; ?>
                   </div>
                 </div>
+                <div class="img-other">
+                  <div class="row">
+                    <?php if (!empty($data->image5)): ?>
+                    <div class="col-3">
+                      <a href="<?php echo base_url($data->image5) ?>" data-lightbox="portfolio" class="link-preview">
+                        <img src="<?php echo base_url($data->image5) ?>" class="first img-product" />
+                      </a>
+                    </div>
+                    <?php endif; ?>
+                    <?php if (!empty($data->image6)): ?>
+                    <div class="col-3">
+                      <a href="<?php echo base_url($data->image6) ?>" data-lightbox="portfolio" class="link-preview">
+                        <img src="<?php echo base_url($data->image6) ?>" class="img-product" />
+                      </a>
+                    </div>
+                    <?php endif; ?>
+                    <?php if (!empty($data->image7)): ?>
+                    <div class="col-3">
+                      <a href="<?php echo base_url($data->image7) ?>" data-lightbox="portfolio" class="link-preview">
+                        <img src="<?php echo base_url($data->image7) ?>" class="img-product" />
+                      </a>
+                    </div>
+                    <?php endif; ?>
+                    <?php if (!empty($data->image8)): ?>
+                    <div class="col-3">
+                      <a href="<?php echo base_url($data->image8) ?>" data-lightbox="portfolio" class="link-preview">
+                        <img src="<?php echo base_url($data->image8) ?>" class="img-product" />
+                      </a>
+                    </div>
+                    <?php endif; ?>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-sm-7 col-xs-10">
@@ -54,39 +86,30 @@
                 <div class="title"><?php echo $data->name ?></div>
                 <div class="price">Rp <?php echo number_format($data->price) ?></div>
                 <div class="description">
-                  <table>
+                  <!-- <table>
                     <tr>
                       <td valign="top" width="130"> <span class="text-hint">Merek</span> </td>
                       <td valign="top"> <?php echo (!empty($data->merk)) ? $data->merk : '-' ?> </td>
                     </tr>
-                    <tr>
-                      <td valign="top"> <span class="text-hint">Stok Tersedia</span> </td>
-                      <td valign="top"> <?php echo number_format($data->stock) ?> </td>
-                    </tr>
-                    <tr>
-                      <td valign="top"> <span class="text-hint">Terjual</span> </td>
-                      <td valign="top"> <?php echo number_format($data->sold_out) ?> </td>
-                    </tr>
-                    <tr>
-                      <td valign="top"> <span class="text-hint">Dikirim Dari</span> </td>
-                      <td valign="top"> <?php echo $data->regencies_name .', '. $data->province_name ?> </td>
-                    </tr>
-                  </table>
-                  <div class="clearfix"></div>
-                  <a href="https://wa.me/<?php echo $app->contact->whatsapp ?>?text=Hallo, apakah *<?php echo $data->name ?>* masih tersedia?" target="_blank">
-                    <i class="fa fa-whatsapp"></i>
-                    Beli Sekarang
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12 col-xs-10">
-              <div class="right">
-                <div class="div30"></div>
-                <div class="description-text">
+                  </table> -->
                   <div class="title">Deskripsi Produk</div>
+                  <div class="clearfix"></div>
                   <div class="content">
                     <?php echo $data->description ?>
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="row">
+                    <div class="col">
+                      <a href="https://wa.me/<?php echo $app->contact->whatsapp ?>?text=Hallo, apakah *<?php echo $data->name ?>* masih tersedia?" target="_blank">
+                        <i class="fa fa-whatsapp"></i>
+                        Beli Sekarang
+                      </a>
+                    </div>
+                    <div class="col">
+                      <a href="<?php echo $data->link_demo?>" target="_blank">
+                        DEMO
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

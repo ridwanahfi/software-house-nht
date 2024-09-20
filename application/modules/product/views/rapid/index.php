@@ -11,7 +11,7 @@
 		</header>
 
 		<?php if (count($data) > 0): ?>
-		<div class="row">
+		<div class="row products-container">
 			<?php foreach ($data as $index => $item): ?>
 			<div class="col-md-6 col-lg-3">
 				<div class="box box-item">

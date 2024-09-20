@@ -27,7 +27,7 @@ class Product extends App
 	public function view($link = null) {
 		$temp = $this->ProductModel->getDetail('link', $link);
 
-		if (count($temp) == 1) {
+		if ($temp) {
 			$data = array(
 				'app' => $this->app(),
 				'data' => $temp,

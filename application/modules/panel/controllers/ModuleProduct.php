@@ -47,9 +47,7 @@ class ModuleProduct extends AppBackend
       'main_js' => $this->load_main_js('moduleProduct'),
       'card_title' => 'Module › Product: Update',
       'data' => $temp,
-      'data_category' => $this->ProductCategoryModel->getAll(),
-      'data_provinces' => $this->ProvincesModel->getAll(),
-      'data_regencies' => $this->RegenciesModel->getFilter('province_id', $temp->province_id)
+      'data_category' => $this->ProductCategoryModel->getAll()
 		);
 		$this->template->set('title', 'Module Product: Update | ' . $data['app']->app_name, TRUE);
 		$this->template->load_view('moduleProduct/form', $data, TRUE);
@@ -60,7 +58,7 @@ class ModuleProduct extends AppBackend
     $this->handle_ajax_request();
 		$dtAjax_config = array(
       'table_name' => 'view_product',
-      'order_column' => 6,
+      'order_column' => 4,
       'order_direction' => 'desc'
 		);
     $response = $this->AppModel->getData_dtAjax( $dtAjax_config );
@@ -82,6 +80,10 @@ class ModuleProduct extends AppBackend
       $_POST['image2'] = '';
       $_POST['image3'] = '';
       $_POST['image4'] = '';
+      $_POST['image5'] = '';
+      $_POST['image6'] = '';
+      $_POST['image7'] = '';
+      $_POST['image8'] = '';
 
       $cpUpload = new CpUpload();
       
@@ -126,6 +128,46 @@ class ModuleProduct extends AppBackend
           $_POST['image4'] = $upload4->data->base_path;
         } else {
           echo json_encode(array('status' => false, 'data' => 'Image 4 : '.$upload4->data));
+          die;
+        };
+      };
+      
+      if (isset($_FILES['image5']) && !empty($_FILES['image5']['name'])) {
+        $upload5 = $cpUpload->run('image5', 'product', true, true, 'jpg|jpeg|png|gif');
+        if ($upload5->status === true) {
+          $_POST['image5'] = $upload5->data->base_path;
+        } else {
+          echo json_encode(array('status' => false, 'data' => 'Image 5 : '.$upload5->data));
+          die;
+        };
+      };
+
+      if (isset($_FILES['image6']) && !empty($_FILES['image6']['name'])) {
+        $upload6 = $cpUpload->run('image6', 'product', true, true, 'jpg|jpeg|png|gif');
+        if ($upload6->status === true) {
+          $_POST['image6'] = $upload6->data->base_path;
+        } else {
+          echo json_encode(array('status' => false, 'data' => 'Image 6 : '.$upload6->data));
+          die;
+        };
+      };
+
+      if (isset($_FILES['image7']) && !empty($_FILES['image7']['name'])) {
+        $upload7 = $cpUpload->run('image7', 'product', true, true, 'jpg|jpeg|png|gif');
+        if ($upload7->status === true) {
+          $_POST['image7'] = $upload7->data->base_path;
+        } else {
+          echo json_encode(array('status' => false, 'data' => 'Image 4 : '.$upload7->data));
+          die;
+        };
+      };
+
+      if (isset($_FILES['image8']) && !empty($_FILES['image8']['name'])) {
+        $upload8 = $cpUpload->run('image8', 'product', true, true, 'jpg|jpeg|png|gif');
+        if ($upload8->status === true) {
+          $_POST['image8'] = $upload8->data->base_path;
+        } else {
+          echo json_encode(array('status' => false, 'data' => 'Image 8 : '.$upload8->data));
           die;
         };
       };

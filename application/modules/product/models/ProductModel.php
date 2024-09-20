@@ -29,16 +29,6 @@ class ProductModel extends CI_Model
         'rules' => 'trim|required'
       ],
       [
-        'field' => 'send_from',
-        'label' => 'Send From',
-        'rules' => 'trim|required'
-      ],
-      [
-        'field' => 'stock',
-        'label' => 'Stock',
-        'rules' => 'trim|required'
-      ],
-      [
         'field' => 'link',
         'label' => 'Link',
         'rules' => 'trim|required|regex_match[/^[a-z0-9-]+$/]'
@@ -69,23 +59,27 @@ class ProductModel extends CI_Model
       $post = $this->input->post();
       $post['price'] = str_replace(',', '', $post['price']);
       $post['price'] = str_replace('.', '', $post['price']);
-      $post['stock'] = str_replace(',', '', $post['stock']);
-      $post['stock'] = str_replace('.', '', $post['stock']);
-      $post['sold_out'] = str_replace(',', '', $post['sold_out']);
-      $post['sold_out'] = str_replace('.', '', $post['sold_out']);
+      // $post['stock'] = str_replace(',', '', $post['stock']);
+      // $post['stock'] = str_replace('.', '', $post['stock']);
+      // $post['sold_out'] = str_replace(',', '', $post['sold_out']);
+      // $post['sold_out'] = str_replace('.', '', $post['sold_out']);
   
       $this->product_category_id = $post['product_category_id'];
       $this->name = $post['name'];
       $this->price = $post['price'];
       $this->description = $this->br2nl($post['description']);
-      $this->merk = $post['merk'];
-      $this->send_from = $post['send_from'];
-      $this->stock = $post['stock'];
-      $this->sold_out = $post['sold_out'];
+      $this->link_demo = $post['link_demo'];
+      // $this->send_from = $post['send_from'];
+      // $this->stock = $post['stock'];
+      // $this->sold_out = $post['sold_out'];
       $this->image1 = $post['image1'];
       $this->image2 = $post['image2'];
       $this->image3 = $post['image3'];
       $this->image4 = $post['image4'];
+      $this->image5 = $post['image5'];
+      $this->image6 = $post['image6'];
+      $this->image7 = $post['image7'];
+      $this->image8 = $post['image8'];
       $this->link = $post['link'];
       $this->visit_count = 0;
       $this->created_at = date('Y-m-d H:i:s');
@@ -108,10 +102,10 @@ class ProductModel extends CI_Model
       $post = $this->input->post();
       $post['price'] = str_replace(',', '', $post['price']);
       $post['price'] = str_replace('.', '', $post['price']);
-      $post['stock'] = str_replace(',', '', $post['stock']);
-      $post['stock'] = str_replace('.', '', $post['stock']);
-      $post['sold_out'] = str_replace(',', '', $post['sold_out']);
-      $post['sold_out'] = str_replace('.', '', $post['sold_out']);
+      // $post['stock'] = str_replace(',', '', $post['stock']);
+      // $post['stock'] = str_replace('.', '', $post['stock']);
+      // $post['sold_out'] = str_replace(',', '', $post['sold_out']);
+      // $post['sold_out'] = str_replace('.', '', $post['sold_out']);
       $post['image1'] = (!empty($post['image1'])) ? $post['image1'] : $temp->image1;
       $post['image2'] = (!empty($post['image2'])) ? $post['image2'] : $temp->image2;
       $post['image3'] = (!empty($post['image3'])) ? $post['image3'] : $temp->image3;
@@ -121,14 +115,18 @@ class ProductModel extends CI_Model
       $this->name = $post['name'];
       $this->price = $post['price'];
       $this->description = $this->br2nl($post['description']);
-      $this->merk = $post['merk'];
-      $this->send_from = $post['send_from'];
-      $this->stock = $post['stock'];
-      $this->sold_out = $post['sold_out'];
+      $this->link_demo = $post['link_demo'];
+      // $this->send_from = $post['send_from'];
+      // $this->stock = $post['stock'];
+      // $this->sold_out = $post['sold_out'];
       $this->image1 = $post['image1'];
       $this->image2 = $post['image2'];
       $this->image3 = $post['image3'];
       $this->image4 = $post['image4'];
+      $this->image5 = $post['image5'];
+      $this->image6 = $post['image6'];
+      $this->image7 = $post['image7'];
+      $this->image8 = $post['image8'];
       $this->link = $post['link'];
       $this->updated_by = $this->session->userdata('user')['user_id'];
       $this->db->update($this->_table, $this, ['id' => $id]);
