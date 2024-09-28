@@ -102,7 +102,7 @@
                     <div class="col">
                       <a href="https://wa.me/<?php echo $app->contact->whatsapp ?>?text=Hallo, apakah *<?php echo $data->name ?>* masih tersedia?" target="_blank">
                         <i class="fa fa-whatsapp"></i>
-                        Beli Sekarang
+                        Beli Nanti
                       </a>
                     </div>
                     <div class="col">
